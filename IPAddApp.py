@@ -28,8 +28,6 @@ import requests
 
 def fetch_ip_info(ip_address=None):
 
-    print(data)
-
     try:
         result_text.config(state=tk.NORMAL)  # Enable text widget for editing
         result_text.delete(1.0, tk.END)  # Clear existing text
@@ -192,12 +190,9 @@ def manually_assign_ip():
         response = requests.get(f'https://ipapi.co/{manual_ip}/json/')
         data = response.json()
         new_window.destroy()  # Close the window
-        print(f"From assign_manual: {manual_ip}")
 
     manual_ip_button = tk.Button(manual_ip_frame, text="Assign", command=assign_manual_ip)
     manual_ip_button.pack(side=tk.LEFT)
-
-    print(manual_ip)
         
 # GUI Components
 window = tk.Tk()
